@@ -25,7 +25,7 @@ This layout is the legacy login page, a centered box with the logos on top
                 {% include "login/partials/html/tagline.html.twig" %}
             </div>
 
-            <div class="p-5 col-12">
+            <div class="p-3 col-12 vertical-box">
                 <input type="hidden" name="new_login_session_management" value="1">
                 <input type="hidden" name="languageChoice" value="{{ defaultLangID|attr }}">
 
@@ -46,12 +46,6 @@ This layout is the legacy login page, a centered box with the logos on top
 
                 {{ divApp }}
 
-                {% include "login/partials/input/languages.html.twig" %}
-
-                {% include "login/partials/input/facilities.html.twig" %}
-
-                {% include "login/partials/input/buttons.html.twig" %}
-
                 <div class="form-group">
                     {% if displayGoogleSignin %}
                     <input type="hidden" id="used-google-signin" name="used_google_signin" value="">
@@ -68,7 +62,6 @@ This layout is the legacy login page, a centered box with the logos on top
                     {% endif %}
                 </div>
 
-                {% include "login/partials/html/acknowledgements.html.twig" %}
             </div>
         </div>
     </form>

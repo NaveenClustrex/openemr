@@ -18,18 +18,29 @@ This layout creates a vertical banded login layout
 /* Custom CSS to be moved after the BS5 migration, this helps responsiveness */
 @media (min-width: 768px) {
     .vertical-band {
-        max-width: 36%;
+        max-width: 40%;
+        text-align: center;
+    }
+    #login-button {
+        background-color: #00A7E1;
+        font-weight: bold;
+    }
+    #login-button:hover {
+        background-color: #0155C4;
+    }
+    #login-tagline {
+        font-weight: 400;
+        font-family: Arial, Helvetica, sans-serif;
     }
 }
 </style>
 {% endblock %}
 
 {% block content %}
-<div class="vh-100 p-5 d-flex flex-column justify-content-center mx-auto vertical-band">
+<div class="vh-100 p-4 d-flex flex-column justify-content-center align-items-center mx-auto vertical-band">
     <div class="align-items-center">
         {% include "login/partials/html/primary_logo.html.twig" %}
         {% include "login/partials/html/login_details.html.twig" %}
-        {% include "login/partials/html/acknowledgements.html.twig" %}
         {{ divApp }}
     </div>
     {% if displayGoogleSignin %}

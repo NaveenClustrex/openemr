@@ -54,6 +54,17 @@ $arrOeUiSettings = array(
 );
 $oemr_ui = new OemrUI($arrOeUiSettings);
 ?>
+
+<style>
+    .btn-email {
+        background-color: #439506;
+        color: white;
+    }
+    .btn-email:hover {
+        background-color: #347a00;
+        color: white;
+    }
+</style>
 </head>
 
 <body>
@@ -118,6 +129,7 @@ $oemr_ui = new OemrUI($arrOeUiSettings);
                                     $view = xl('Print'); //actually prints or displays ready to print
                                     $delete = xl('Delete');
                                     $title = xl($item['title']);
+                                    $send = xl('Send Email');
                                     ?>
                                     <tr>
                                         <td>
@@ -140,6 +152,16 @@ $oemr_ui = new OemrUI($arrOeUiSettings);
                                                         <?php echo text($view); ?>
                                                     </a>
                                                 <?php } ?>
+                                                <?php if ($item['title'] == 'LBTref') { ?>
+                                                    <a href='send_email.php?transid=<?php echo attr_url($id); ?>' onclick='top.restoreSession();' class='btn btn-email'>
+                                                        <svg fill="#ffffff" width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M0 0h24v24H0V0z" fill="none"/>
+                                                            <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 20c0 1.1.89 2 1.99 2H20c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 2l-8 5-8-5V4l8 5 8-5V4zM4 20V8l8 5 8-5v12H4z"/>
+                                                        </svg>
+                                                        <?php echo text($send); ?>
+                                                    </a>
+                                                <?php } ?>
+
                                             </div>
                                         </td>
                                         <td><?php echo text(getLayoutTitle('Transactions', $item['title'])); ?></td>

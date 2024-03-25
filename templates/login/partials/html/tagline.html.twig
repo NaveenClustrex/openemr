@@ -12,6 +12,6 @@ Render the tagline, if set
 #}
 {% if displayTagline %}
 {% block tagline %}
-<p class="{{ tagline_p_class_list|default(['text-center', 'lead'])|join(' ') }}">{{ tagline|xlt }}</p>
+<p id="login-tagline" class="{{ tagline_p_class_list|default(['text-center', 'lead'])|join(' ') }}">{{ tagline|xlt }}</p>
 {% endblock %}
 {% endif %}
